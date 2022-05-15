@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+body{background:#444;}
+{% block content %}
+
+
+<h1>Задачи успешно загружены</h1>
+<div class="alert alert-info" role="banner">
+
+    <div class="alert alert-$indigo-200" role="banner">
+        {{ error }}
+    </div>
+    <div class="p-3 mb-2 bg-dark text-white "><h4>Запустить игру?</h4></div>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+
+        <div class="alert alert-$indigo-200" role="button">
+            {{ error }}
+        </div>
+        <div class="alert alert-calm" role="banner">
+
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="submit" value="reload" name="submit_button" class="btn btn-outline-info"
+                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Вы можете загрузить другие задания">
+                    Изменить задания
+                </button>
+                <button type="submit" value="start" name="submit_button" class="btn btn-dark">Запустить игру</button>
+            </div>
+    </form>
+    {% endblock %}
